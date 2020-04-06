@@ -45,6 +45,6 @@ As the first openly nonbinary employee at a former company, the learning curve o
 - i can't implement my "switch button" idea, due to the fact that i will not be hosting crowdfunding campaigns myself
   - i'll be honest. this one keeps me up at night.
   
-my mentor taught me about project planning, MVP, milestones and incremental progress weeks ago, and i didn't think i was facing too many risks from a technical standpoint. my MVP seemed perfectly achievable, given my current skill set and level of commitment.
+My mentor taught me about project planning, MVP, milestones and incremental progress weeks ago, and I didn't think I was facing too many risks from a technical standpoint. My MVP seemed perfectly achievable, given my current skill set and level of commitment.
 
-so i went back and moved a few "Additional Nice-to-Have Features" into it :)
+So I went back and moved a few "Additional Nice-to-Have Features" into it :)
