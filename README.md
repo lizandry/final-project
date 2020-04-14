@@ -1,5 +1,8 @@
 # swear jar
 
+[detailed planning doc here](https://docs.google.com/document/d/146n-g6z_OT0pFS0uHEFkSqujsksm9uoES8COhlVQ4wE/edit?usp=sharing)
+[trello here](https://trello.com/b/HizQsYP8/swear-jar)
+
 ## Elevator Pitch
 
 As the first openly nonbinary employee at a former company, the learning curve on they/them pronouns started to get to me. I didn't want the shame of correcting people mid-sentence, and they didn't want the shame of needing correction. My app, swear jar, aims to turn these interactions into a positive experience for all three people involved: the mistake maker, the mistake noticer, and the gofundme campaigner who benefits from the mistake.
