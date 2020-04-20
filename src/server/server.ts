@@ -19,7 +19,7 @@ res.send('Hello World!');
 app.get('/users', (_unused, res, next) =>
 db
     .getAllUsers()
-    .then(users => res.send(users))
+    // .then(users => res.send(users))
     .catch(next)
 );
 // GET /user
