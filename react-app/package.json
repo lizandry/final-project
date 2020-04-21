@@ -7,6 +7,7 @@
     "url": "https://github.com/lizandry/final-project.git"
   },
   "scripts": {
+    "tsc": "tsc",
     "build": "webpack -p",
     "start": "webpack-dev-server -d --content-base ./public"
   },
