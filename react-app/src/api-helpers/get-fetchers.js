@@ -1,5 +1,5 @@
 export function fetchAllUsers() {
-    return fetch('/users', {
+    return fetch('/api/users', {
       headers: {
         Accept: "application/json"
       }
@@ -8,14 +8,14 @@ export function fetchAllUsers() {
         return resp.json();
       } else {
         throw new Error(
-          `oops!! fetch('/users') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}.`
+          `oops!! fetch('/api/users') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}.`
         );
       }
     });
   }
 
   export function fetchAllTeams() {
-    return fetch('/teams', {
+    return fetch('/api/teams', {
       headers: {
         Accept: "application/json"
       }
@@ -24,13 +24,13 @@ export function fetchAllUsers() {
         return resp.json();
       } else {
         throw new Error(
-          `oops!! fetch('/teams') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}.`
+          `oops!! fetch('/api/teams') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}.`
         );
       }
     });
   }
 export function fetchUser(params) {
-    return fetch(`/users/${params}`, {
+    return fetch(`/api/users/${params}`, {
         headers: {
             Accept: "application/json"
         },
@@ -39,14 +39,14 @@ export function fetchUser(params) {
         return resp.json();
       } else {
         throw new Error(
-          `oops!! fetch('/users/${params}') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}`
+          `oops!! fetch('/api/users/${params}') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}`
         );
       }
     });
   }
 
 export function fetchTeam(params) {
-    return fetch(`/teams/${params}`, {
+    return fetch(`/api/teams/${params}`, {
         headers: {
             Accept: "application/json"
         },
@@ -55,7 +55,7 @@ export function fetchTeam(params) {
         return resp.json();
       } else {
         throw new Error(
-          `oops!! fetch('/teams/${params}') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}`
+          `oops!! fetch('/api/teams/${params}') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}`
         );
       }
     });
