@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fetchAllUsers } from './api-helpers/get-fetchers';
+import { fetchAllUsers, fetchAllTeams, fetchUser, fetchTeam } from './api-helpers/get-fetchers';
 class App extends React.Component {
     constructor(props: object) {
         super(props);
@@ -18,6 +18,7 @@ const friendship: string = 'friendship';
 
         return (
             <div className='App'>
+                {console.log('state check!', this.state)}
                 hello world!!
             </div>
         )

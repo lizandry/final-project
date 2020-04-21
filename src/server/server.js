@@ -13,19 +13,18 @@ res.send('Hello World!');
 });
 
 
-
 app.get('/users', (_unused, res, next) =>
 db
     .getAllUsers()
     .then((users) => res.send(users))
     .catch(next)
 );
-// app.get('/teams', (_unused, res, next) =>
-// db
-//     .getAllTeams()
-//     .then((teams) => res.send(teams))
-//     .catch(next)
-// );
+app.get('/teams', (_unused, res, next) =>
+db
+    .getAllTeams()
+    .then((teams) => res.send(teams))
+    .catch(next)
+);
 
 
 app.get('/users/:user', (req, res, next) =>

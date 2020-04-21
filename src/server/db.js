@@ -4,7 +4,6 @@ const db = pgp('postgres://postgres@localhost:5432/swear-jar');
 
 class SwearDatabase {
     constructor() {
-        // this.db: string = db;
     }
     
 getAllUsers(){
