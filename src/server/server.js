@@ -14,8 +14,6 @@ res.send('Hello World!');
 
 
 
-// IN PROGRESS: learning how to handle this in typescript
-// ie i think i need to make interfaces?
 app.get('/users', (_unused, res, next) =>
 db
     .getAllUsers()
@@ -38,7 +36,7 @@ app.get('/users/:user', (req, res, next) =>
 );
 app.get('/teams/:team', (req, res, next) =>
     db
-        .getATeam(req.params.id)
+        .getTeam(req.params.id)
         .then(team=>res.send(team))
         .catch(next)
 );
