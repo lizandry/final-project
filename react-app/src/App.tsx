@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fetchAllUsers, fetchAllTeams, fetchUser, fetchTeam } from './api-helpers/get-fetchers';
+import { fetchAllUsers, fetchAllTeams } from './api-helpers/get-fetchers';
 class App extends React.Component {
     constructor(props: object) {
         super(props);
