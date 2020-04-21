@@ -11,5 +11,16 @@ module.exports = {
       rules: [
         { test: /\.tsx?$/, loader: 'ts-loader' }
       ]
+    },
+    devServer: {
+        // contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        port: 3001,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                secure: false
+            }
+        }
     }
   }

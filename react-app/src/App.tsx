@@ -5,28 +5,18 @@ class App extends React.Component {
         super(props);
         this.state = {
             users: Array,
+            teams: Array
         };
     }
 
-    // componentDidMount() {
-    //     fetchAllUsers()
-    //     .then(users => this.setState({ users }))
-    // }
-
     componentDidMount() {
-        this.callApi()
-        //   .then(res => this.setState({ response: res.express }))
-        .then(users => this.setState({ users }))
-          .catch(err => console.log(err));
-      }
-      
-      callApi = async () => {
-        const response = await fetch('/api/users');
-        const body = await response.json();
-        if (response.status !== 200) throw Error(body.message);
-        
-        return body;
-      };
+        fetchAllUsers()
+            .then(users => this.setState({ users }))
+            .catch(err => console.log(err));
+        fetchAllTeams()
+            .then(teams => this.setState({ teams }))
+            .catch(err => console.log(err));
+    }
 
     render() {
 const friendship: string = 'friendship';
