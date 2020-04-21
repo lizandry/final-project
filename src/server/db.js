@@ -34,13 +34,13 @@ class SwearDatabase {
                 ON u.id = ut.user_id
                 JOIN teams t
                 ON ut.team_id = t.id
-                WHERE u.id = 1
-            `
+                WHERE u.id = $1
+            `, params
             );
         }
         
-        // TODO get id and pass it in as params
         // TODO user_id in swears table probably isn't necessary
+        // this one is basically done!!
     getTeam(params) {
         return db.any(
             `SELECT 
@@ -56,8 +56,8 @@ class SwearDatabase {
                 ON u.id = ut.user_id
                 JOIN teams t
                 ON ut.team_id = t.id
-                WHERE ut.team_id = 1
-            `
+                WHERE ut.team_id = $1
+            `, params
             );
         }
         // TODO this should be a call for a separate component

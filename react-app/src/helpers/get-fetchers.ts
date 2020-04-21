@@ -29,21 +29,21 @@ export function fetchAllUsers() {
       }
     });
   }
-export function fetchUser(params) {
-    return fetch(`/api/users/${params}`, {
-        headers: {
-            Accept: "application/json"
-        },
-    }).then(resp => {
-      if (resp.ok) {
-        return resp.json();
-      } else {
-        throw new Error(
-          `oops!! fetch('/api/users/${params}') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}`
-        );
-      }
-    });
-  }
+// export function fetchUser(params) {
+//     return fetch(`/api/users/${params}`, {
+//         headers: {
+//             Accept: "application/json"
+//         },
+//     }).then(resp => {
+//       if (resp.ok) {
+//         return resp.json();
+//       } else {
+//         throw new Error(
+//           `oops!! fetch('/api/users/${params}') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}`
+//         );
+//       }
+//     });
+//   }
 
 export function fetchTeam(params) {
     return fetch(`/api/teams/${params}`, {

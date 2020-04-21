@@ -28,6 +28,7 @@ db
 
 
 app.get('/api/users/:user', (req, res, next) =>
+
     db
         .getUser(req.params.id)
         .then(user=>res.send(user))
@@ -35,8 +36,9 @@ app.get('/api/users/:user', (req, res, next) =>
 );
 app.get('/api/teams/:team', (req, res, next) =>
     db
-        .getTeam(req.params.id)
+        .getTeam(req.params.team)
         .then(team=>res.send(team))
+        // .then(console.log('req.params', req.params))
         .catch(next)
 );
 

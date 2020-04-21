@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { fetchAllUsers, fetchAllTeams } from './api-helpers/get-fetchers';
+import TeamDash from './Components/TeamDash'
+import { fetchAllUsers, fetchAllTeams } from './helpers/get-fetchers';
+import { displayTeam } from './helpers/App-callbacks';
 class App extends React.Component {
     constructor(props: object) {
         super(props);
         this.state = {
             users: Array,
-            teams: Array
+            teams: Array,
+            team: Array
         };
     }
 
@@ -16,15 +19,18 @@ class App extends React.Component {
         fetchAllTeams()
             .then(teams => this.setState({ teams }))
             .catch(err => console.log(err));
+
     }
 
     render() {
-const friendship: string = 'friendship';
-
+// const friendship: string = 'friendship';
+// console.log(this.state)
         return (
             <div className='App'>
-                {console.log('state check!', this.state)}
-                hello world!!
+                <TeamDash
+                    action={displayTeam}
+                
+                />
             </div>
         )
     }

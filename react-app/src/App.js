@@ -12,36 +12,38 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(require("react"));
-var get_fetchers_1 = require("./api-helpers/get-fetchers");
+var React = require("react");
+var TeamDash_1 = require("./Components/TeamDash");
+var get_fetchers_1 = require("./helpers/get-fetchers");
+var App_callbacks_1 = require("./helpers/App-callbacks");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
             users: Array,
+            teams: Array,
+            team: Array
         };
         return _this;
     }
     App.prototype.componentDidMount = function () {
         var _this = this;
         get_fetchers_1.fetchAllUsers()
-            .then(function (users) { return _this.setState({ users: users }); });
+            .then(function (users) { return _this.setState({ users: users }); })
+            .catch(function (err) { return console.log(err); });
+        get_fetchers_1.fetchAllTeams()
+            .then(function (teams) { return _this.setState({ teams: teams }); })
+            .catch(function (err) { return console.log(err); });
     };
     App.prototype.render = function () {
-        var friendship = 'friendship';
-        return (<div className='App'>
-                hello world!!
-            </div>);
+        // const friendship: string = 'friendship';
+        // console.log(this.state)
+        return (React.createElement("div", { className: 'App' },
+            React.createElement(TeamDash_1.default, { action: App_callbacks_1.displayTeam })));
     };
     return App;
 }(React.Component));
 exports.default = App;
+//# sourceMappingURL=App.js.map
