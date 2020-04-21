@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000
-const SwearDatabase = require('./entities/db');
+const SwearDatabase = require('./db');
 const dbName = process.env.DB_NAME || 'swear-jar';
 const db = new SwearDatabase(dbName);
 
@@ -19,17 +19,27 @@ res.send('Hello World!');
 app.get('/users', (_unused, res, next) =>
 db
     .getAllUsers()
-// what type is users?
     .then((users) => res.send(users))
     .catch(next)
 );
-// GET /user
+// app.get('/teams', (_unused, res, next) =>
+// db
+//     .getAllTeams()
+//     .then((teams) => res.send(teams))
+//     .catch(next)
+// );
+
+
 app.get('/users/:user', (req, res, next) =>
     db
-        // .filterBooks(req.params.selectedGenre)
         .getUser(req.params.id)
-        // TODO error here
-        // .then(thisUser=>res.send(thisUser))
+        .then(user=>res.send(user))
+        .catch(next)
+);
+app.get('/teams/:team', (req, res, next) =>
+    db
+        .getATeam(req.params.id)
+        .then(team=>res.send(team))
         .catch(next)
 );
 
