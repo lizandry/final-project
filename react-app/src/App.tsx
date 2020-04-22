@@ -1,5 +1,5 @@
 import * as React from 'react';
-import TeamDash from './Components/TeamDash'
+import TeamTable from './Components/TeamTable'
 import { fetchAllUsers, fetchAllTeams} from './helpers/get-fetchers';
 import { displayTeam } from './helpers/App-callbacks';
 class App extends React.Component {
@@ -38,7 +38,7 @@ class App extends React.Component {
         return (
             <div className='App'>
                 {/* {console.log('state check!!', this.state)} */}
-                <TeamDash
+                <TeamTable
                     action={displayTeam}
                 
                 />

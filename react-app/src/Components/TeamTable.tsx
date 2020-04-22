@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const TeamDash = (props) => {
+const TeamTable = (props) => {
     // console.log('props', props)
     // TODO take this out of hardcoding
     return(
@@ -17,4 +17,4 @@ const TeamDash = (props) => {
     )
 }
 
-export default TeamDash;
+export default TeamTable;

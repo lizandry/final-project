@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var TeamDash_1 = require("./Components/TeamDash");
+var TeamTable_1 = require("./Components/TeamTable");
 var get_fetchers_1 = require("./helpers/get-fetchers");
 var App_callbacks_1 = require("./helpers/App-callbacks");
 var App = /** @class */ (function (_super) {
@@ -24,6 +24,7 @@ var App = /** @class */ (function (_super) {
         _this.state = {
             users: Array,
             teams: Array,
+            // user: 1,
             team: Array
         };
         return _this;
@@ -36,12 +37,19 @@ var App = /** @class */ (function (_super) {
         get_fetchers_1.fetchAllTeams()
             .then(function (teams) { return _this.setState({ teams: teams }); })
             .catch(function (err) { return console.log(err); });
+        // fetchTeam(this.state.user)
+        // .then(team => this.setState({ team }))
     };
+    // displayTeam = teamId => {
+    //     fetchTeam(teamId)
+    //         .then(team => this.setState({ team }))
+    // .then(team => console.log('display team', team))
+    // }
     App.prototype.render = function () {
         // const friendship: string = 'friendship';
         // console.log(this.state)
         return (React.createElement("div", { className: 'App' },
-            React.createElement(TeamDash_1.default, { action: App_callbacks_1.displayTeam })));
+            React.createElement(TeamTable_1.default, { action: App_callbacks_1.displayTeam })));
     };
     return App;
 }(React.Component));

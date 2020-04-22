@@ -7,4 +7,4 @@ var TeamTable = function (props) {
     return (React.createElement("div", null, props.action(2)));
 };
 exports.default = TeamTable;
-//# sourceMappingURL=TeamDash.js.map
+//# sourceMappingURL=TeamTable.js.map
