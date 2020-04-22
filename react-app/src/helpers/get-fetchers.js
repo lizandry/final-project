@@ -30,7 +30,23 @@ function fetchAllTeams() {
     });
 }
 exports.fetchAllTeams = fetchAllTeams;
-// export function fetchUser(params) {
+function fetchUser(params) {
+    return fetch("/api/users/" + params, {
+        headers: {
+            Accept: "application/json"
+        },
+    }).then(function (resp) {
+        if (resp.ok) {
+            return resp.json();
+        }
+        else {
+            throw new Error("oops!! fetch('/api/users/" + params + "') failed: Express server responded with HTTP " + resp.status + " " + resp.statusText);
+        }
+    });
+}
+exports.fetchUser = fetchUser;
+//   TODO i don't know how to do this =[
+//   export function fetchUserTeams(params) {
 //     return fetch(`/api/users/${params}`, {
 //         headers: {
 //             Accept: "application/json"
@@ -60,4 +76,8 @@ function fetchTeam(params) {
     });
 }
 exports.fetchTeam = fetchTeam;
+function fetchUserState(params) {
+    var user = fetchUser(params);
+}
+exports.fetchUserState = fetchUserState;
 //# sourceMappingURL=get-fetchers.js.map

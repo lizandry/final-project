@@ -1,15 +1,28 @@
 import * as React from 'react';
 import TeamTable from './Components/TeamTable'
-import { fetchAllUsers, fetchAllTeams} from './helpers/get-fetchers';
+import { fetchAllUsers, fetchAllTeams, fetchUserTeams} from './helpers/get-fetchers';
 import { displayTeam } from './helpers/App-callbacks';
+
+interface IProps {
+}
+
+interface IState {
+  user: object;
+  teams: any[];
+  userTeams: number[];
+}
+
+
+
 class App extends React.Component {
+    //TODO change structure, so state is 'user' and teams is their teams
     constructor(props: object) {
         super(props);
         this.state = {
-            users: Array,
-            teams: Array,
-            // user: 1,
-            team: Array
+            user: {},
+            teams: [],
+            userTeams: [],
+            team: []
         };
     }
 
@@ -22,21 +35,17 @@ class App extends React.Component {
             .catch(err => console.log(err));
 
 
-        // fetchTeam(this.state.user)
-        // .then(team => this.setState({ team }))
     }
-    // displayTeam = teamId => {
-    //     fetchTeam(teamId)
-    //         .then(team => this.setState({ team }))
-            // .then(team => console.log('display team', team))
-    // }
+
     
     render() {
 // const friendship: string = 'friendship';
 // console.log(this.state)
+// const setTeams = this.state.user.id => {}
 
         return (
             <div className='App'>
+                {/* {(this.state.user.id=>)=>} */}
                 {/* {console.log('state check!!', this.state)} */}
                 <TeamTable
                     action={displayTeam}

@@ -19,13 +19,14 @@ var get_fetchers_1 = require("./helpers/get-fetchers");
 var App_callbacks_1 = require("./helpers/App-callbacks");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
+    //TODO change structure, so state is 'user' and teams is their teams
     function App(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
-            users: Array,
-            teams: Array,
-            // user: 1,
-            team: Array
+            user: {},
+            teams: [],
+            userTeams: [],
+            team: []
         };
         return _this;
     }
