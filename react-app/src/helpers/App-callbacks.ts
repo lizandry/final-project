@@ -2,18 +2,15 @@
 import {fetchTeam } from './get-fetchers';
 
 // export const displayUser = userId => {
-//     // const e = event.target.value
-//     //     if (e.length !== 0 && e !== 'filter by genre') {
         
-//             fetchUser(userId)
-//             .then(user => this.setState({ user }))
-//         // }
+    // fetchUser(userId)
+    // .then(user => this.setState({ user }))
 // }    
 
 
-//TODO
+// TODO this
 export const displayTeam = teamId => {
-            fetchTeam(teamId)
-            .then(team => {console.log('team', team)})
-        }
-// }   
+    fetchTeam(teamId)
+    // .then(team => this.setState({ team }))
+    .then(team => console.log('displayTeam team', team))
+}   
