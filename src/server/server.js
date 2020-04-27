@@ -11,8 +11,12 @@ const dotenv = require('dotenv');
 const session = require('express-session');
 
 // Load Passport
-var passport = require('passport');
-var Auth0Strategy = require('passport-auth0');
+const passport = require('passport');
+const Auth0Strategy = require('passport-auth0');
+const userInViews = require('../middleware/userInViews');
+const authRouter = require('./routes/auth');
+// const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 //!!!!!
 //!!!!! END AUTH0 REQS
 //!!!!!
@@ -25,7 +29,7 @@ app.use(express.json());
 //!!!!!
 // REFACTOR this file is terrible to look at
 // session config
-var sess = {
+const sess = {
     secret: 'CHANGE THIS TO A RANDOM SECRET',
     cookie: {},
     resave: false,
@@ -44,7 +48,7 @@ var sess = {
   app.use(session(sess));
 
 // passport config
-  var strategy = new Auth0Strategy(
+const strategy = new Auth0Strategy(
     {
       domain: process.env.AUTH0_DOMAIN,
       clientID: process.env.AUTH0_CLIENT_ID,
@@ -74,6 +78,11 @@ passport.serializeUser(function (user, done) {
   passport.deserializeUser(function (user, done) {
     done(null, user);
   });
+
+  app.use(userInViews());
+app.use('/', authRouter);
+// app.use('/', indexRouter);
+app.use('/', usersRouter);
 
 //!!!!!
 //!!!!! END AUTH0 CONFIG

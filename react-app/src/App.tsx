@@ -44,6 +44,7 @@ class App extends React.Component {
 
         return (
             <div className='App'>
+                hi
                 {/* {(this.state.user.id=>)=>} */}
                 {/* {console.log('state check!!', this.state)} */}
                 <TeamTable
